@@ -19,7 +19,6 @@ import com.hujiang.gradle.plugin.android.aspectjx.AJXConfig
 import com.hujiang.gradle.plugin.android.aspectjx.AJXExtension
 import com.hujiang.gradle.plugin.android.aspectjx.internal.AJXUtils
 import com.hujiang.gradle.plugin.android.aspectjx.internal.model.AJXExtensionConfig
-import org.apache.commons.io.FileUtils
 import org.aspectj.weaver.Dump
 import org.gradle.api.Project
 import org.gradle.api.tasks.compile.JavaCompile
@@ -92,7 +91,9 @@ class AJXCache {
     }
 
     private void init() {
-        cachePath = project.buildDir.absolutePath + File.separator + AndroidProject.FD_INTERMEDIATES + "/ajx"
+        //gradle 7.2+ AndroidProject.FD_INTERMEDIATES被移除
+        //cachePath = project.buildDir.absolutePath + File.separator + AndroidProject.FD_INTERMEDIATES + "/ajx"
+        cachePath = project.buildDir.absolutePath + File.separator + "intermediates/ajx"
         extensionConfigPath = cachePath + File.separator + "extensionConfig.json"
 
         if (!cacheDir.exists()) {

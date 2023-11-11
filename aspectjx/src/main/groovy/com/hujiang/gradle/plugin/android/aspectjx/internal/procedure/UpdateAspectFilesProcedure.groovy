@@ -15,12 +15,10 @@
 package com.hujiang.gradle.plugin.android.aspectjx.internal.procedure
 
 import com.android.build.api.transform.*
-import com.google.common.io.ByteStreams
 import com.hujiang.gradle.plugin.android.aspectjx.internal.AJXUtils
 import com.hujiang.gradle.plugin.android.aspectjx.internal.cache.VariantCache
 import com.hujiang.gradle.plugin.android.aspectjx.internal.concurrent.BatchTaskScheduler
 import com.hujiang.gradle.plugin.android.aspectjx.internal.concurrent.ITask
-import org.apache.commons.io.FileUtils
 import org.gradle.api.Project
 
 import java.util.jar.JarEntry
