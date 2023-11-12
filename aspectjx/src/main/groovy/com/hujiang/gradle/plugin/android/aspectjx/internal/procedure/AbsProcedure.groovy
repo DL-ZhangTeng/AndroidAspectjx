@@ -15,7 +15,6 @@
 package com.hujiang.gradle.plugin.android.aspectjx.internal.procedure
 
 import com.android.build.api.transform.TransformInvocation
-import com.hujiang.gradle.plugin.android.aspectjx.internal.cache.AJXCache
 import com.hujiang.gradle.plugin.android.aspectjx.internal.cache.VariantCache
 import com.hujiang.gradle.plugin.android.aspectjx.internal.model.AJXExtensionConfig
 import org.gradle.api.Project

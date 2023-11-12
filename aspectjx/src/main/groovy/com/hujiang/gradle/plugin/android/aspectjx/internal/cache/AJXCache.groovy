@@ -14,11 +14,11 @@
  */
 package com.hujiang.gradle.plugin.android.aspectjx.internal.cache
 
-import com.android.builder.model.AndroidProject
 import com.hujiang.gradle.plugin.android.aspectjx.AJXConfig
 import com.hujiang.gradle.plugin.android.aspectjx.AJXExtension
 import com.hujiang.gradle.plugin.android.aspectjx.internal.AJXUtils
 import com.hujiang.gradle.plugin.android.aspectjx.internal.model.AJXExtensionConfig
+import org.apache.commons.io.FileUtils
 import org.aspectj.weaver.Dump
 import org.gradle.api.Project
 import org.gradle.api.tasks.compile.JavaCompile

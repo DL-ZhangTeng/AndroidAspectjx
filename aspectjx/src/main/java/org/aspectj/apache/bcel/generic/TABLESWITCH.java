@@ -53,11 +53,11 @@
  */
 package org.aspectj.apache.bcel.generic;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-
 import org.aspectj.apache.bcel.Constants;
 import org.aspectj.apache.bcel.util.ByteSequence;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
 
 /**
  * TABLESWITCH - Switch within given range of values, i.e., low..high
@@ -74,7 +74,7 @@ public class TABLESWITCH extends InstructionSelect {
      * @param target  default branch
      */
     public TABLESWITCH(int[] match, InstructionHandle[] targets, InstructionHandle target) {
-        super(org.aspectj.apache.bcel.Constants.TABLESWITCH, match, targets, target);
+        super(Constants.TABLESWITCH, match, targets, target);
 
         // if (match_length==0) {
         // throw new RuntimeException("A tableswitch with no targets should be represented as a LOOKUPSWITCH");

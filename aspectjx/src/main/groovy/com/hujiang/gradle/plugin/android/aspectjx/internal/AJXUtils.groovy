@@ -21,7 +21,7 @@ import com.google.gson.GsonBuilder
 import com.google.gson.JsonSyntaxException
 import com.hujiang.gradle.plugin.android.aspectjx.AJXPlugin
 import com.hujiang.gradle.plugin.android.aspectjx.internal.cache.VariantCache
-import org.gradle.internal.impldep.org.apache.commons.io.FileUtils
+import org.apache.commons.io.FileUtils
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassWriter
 import org.slf4j.LoggerFactory

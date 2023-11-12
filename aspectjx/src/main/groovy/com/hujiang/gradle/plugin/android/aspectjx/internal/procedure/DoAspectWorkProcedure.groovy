@@ -22,6 +22,7 @@ import com.hujiang.gradle.plugin.android.aspectjx.internal.AJXTask
 import com.hujiang.gradle.plugin.android.aspectjx.internal.AJXTaskManager
 import com.hujiang.gradle.plugin.android.aspectjx.internal.cache.AJXCache
 import com.hujiang.gradle.plugin.android.aspectjx.internal.cache.VariantCache
+import org.apache.commons.io.FileUtils
 import org.gradle.api.Project
 
 /**

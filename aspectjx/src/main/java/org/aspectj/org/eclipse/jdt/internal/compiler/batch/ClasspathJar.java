@@ -20,6 +20,22 @@ package org.aspectj.org.eclipse.jdt.internal.compiler.batch;
 // this file has a number of changes made by ASC to prevent us from
 // leaking OS resources by keeping jars open longer than needed.
 
+import org.aspectj.org.eclipse.jdt.core.compiler.CharOperation;
+import org.aspectj.org.eclipse.jdt.internal.compiler.batch.FileSystem.Classpath;
+import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader;
+import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
+import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ExternalAnnotationDecorator;
+import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ExternalAnnotationProvider;
+import org.aspectj.org.eclipse.jdt.internal.compiler.env.AccessRuleSet;
+import org.aspectj.org.eclipse.jdt.internal.compiler.env.IBinaryType;
+import org.aspectj.org.eclipse.jdt.internal.compiler.env.IModule;
+import org.aspectj.org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
+import org.aspectj.org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.ExternalAnnotationStatus;
+import org.aspectj.org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
+import org.aspectj.org.eclipse.jdt.internal.compiler.util.ManifestAnalyzer;
+import org.aspectj.org.eclipse.jdt.internal.compiler.util.SuffixConstants;
+import org.aspectj.org.eclipse.jdt.internal.compiler.util.Util;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,22 +47,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-
-import org.aspectj.org.eclipse.jdt.core.compiler.CharOperation;
-import org.aspectj.org.eclipse.jdt.internal.compiler.batch.FileSystem.Classpath;
-import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader;
-import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
-import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ExternalAnnotationDecorator;
-import org.aspectj.org.eclipse.jdt.internal.compiler.classfmt.ExternalAnnotationProvider;
-import org.aspectj.org.eclipse.jdt.internal.compiler.env.AccessRuleSet;
-import org.aspectj.org.eclipse.jdt.internal.compiler.env.IModule;
-import org.aspectj.org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
-import org.aspectj.org.eclipse.jdt.internal.compiler.env.IBinaryType;
-import org.aspectj.org.eclipse.jdt.internal.compiler.lookup.TypeConstants;
-import org.aspectj.org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.ExternalAnnotationStatus;
-import org.aspectj.org.eclipse.jdt.internal.compiler.util.ManifestAnalyzer;
-import org.aspectj.org.eclipse.jdt.internal.compiler.util.SuffixConstants;
-import org.aspectj.org.eclipse.jdt.internal.compiler.util.Util;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class ClasspathJar extends ClasspathLocation {

@@ -15,10 +15,11 @@
 package com.hujiang.gradle.plugin.android.aspectjx.internal.cache
 
 import com.android.build.api.transform.QualifiedContent
-import com.android.builder.model.AndroidProject
+import com.google.common.collect.ImmutableSet
 import com.google.gson.reflect.TypeToken
 import com.hujiang.gradle.plugin.android.aspectjx.internal.AJXUtils
 import com.hujiang.gradle.plugin.android.aspectjx.internal.model.JarInfo
+import org.apache.commons.io.FileUtils
 import org.gradle.api.Project
 
 import java.util.concurrent.ConcurrentHashMap
@@ -58,7 +59,11 @@ class VariantCache {
     }
 
     private void init() {
-        cachePath = project.buildDir.absolutePath + File.separator + AndroidProject.FD_INTERMEDIATES + "/ajx/" + variantName
+        //gradle 7.2+ AndroidProject.FD_INTERMEDIATES被移除
+        // cachePath = project.buildDir.absolutePath + File.separator + AndroidProject.FD_INTERMEDIATES + "/ajx/" + variantName
+        cachePath = project.buildDir.absolutePath + File.separator + "intermediates/ajx/" + variantName
+
+
         aspectPath = cachePath + File.separator + "aspecs"
         includeFilePath = cachePath + File.separator + "includeFiles"
         excludeFilePath = cachePath + File.separator + "excludeFiles"

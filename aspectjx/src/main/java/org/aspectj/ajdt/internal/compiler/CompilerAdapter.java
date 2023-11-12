@@ -5,8 +5,6 @@
 
 package org.aspectj.ajdt.internal.compiler;
 
-import java.util.Stack;
-
 import org.aspectj.internal.lang.annotation.ajcPrivileged;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -16,6 +14,8 @@ import org.aspectj.org.eclipse.jdt.internal.compiler.Compiler;
 import org.aspectj.org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.aspectj.org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 import org.aspectj.org.eclipse.jdt.internal.compiler.problem.AbortCompilation;
+
+import java.util.Stack;
 
 @Aspect
 @ajcPrivileged
