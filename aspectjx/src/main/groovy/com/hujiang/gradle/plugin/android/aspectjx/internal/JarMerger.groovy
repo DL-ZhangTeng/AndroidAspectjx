@@ -14,7 +14,7 @@
  */
 package com.hujiang.gradle.plugin.android.aspectjx.internal
 
-import org.gradle.internal.impldep.com.google.common.io.Closer
+import com.google.common.io.Closer
 import org.gradle.internal.impldep.org.eclipse.jgit.annotations.NonNull
 
 import java.util.jar.JarEntry
