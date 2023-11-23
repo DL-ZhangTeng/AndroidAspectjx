@@ -76,7 +76,7 @@ aspectjx {
 | - | - |
 | Android Gradle Plugin | 7.2.2 |
 | Gradle | 7.3.3 |
-| org.aspectj:aspectjtools | 1.9.20 |
+| org.aspectj:aspectjtools | 1.9.9.1 |
 
 ## License
 
