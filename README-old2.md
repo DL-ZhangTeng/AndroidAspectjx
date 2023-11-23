@@ -1,12 +1,19 @@
 AspectJX
 ===========
 
+由于原作者不再维护，所以fork过来自己维护。
+
 > [原作者说明文档](./README-old.md) 
-> [原作者说明文档2](./README-old2.md) 
+
+## 最新版本（2.0.14）
+
+[查看完整版本日志](CHANGELOG.md)
+
+> 开发中的测试版本访问：[Sonatype's snapshot repository](https://s01.oss.sonatype.org/content/repositories/snapshots/io/github/wurensen/gradle-android-plugin-aspectjx/)
 
 ## 如何使用
 
-* **插件引用(未发布请使用buildSrc方式)**
+* **插件引用**
 
 在项目根目录的build.gradle里依赖**AspectJX**
 
@@ -20,7 +27,7 @@ buildscript {
 
     dependencies {
         // aspectj插件
-        classpath 'com.github.DL-ZhangTeng:AndroidAspectjx:2.1.0'
+        classpath 'io.github.wurensen:gradle-android-plugin-aspectjx:<version>'
     }
 }
 ```
@@ -74,14 +81,29 @@ aspectjx {
 
 | 使用依赖 | 适配版本 |
 | - | - |
-| Android Gradle Plugin | 7.2.2 |
-| Gradle | 7.3.3 |
-| org.aspectj:aspectjtools | 1.9.20 |
+| Android Gradle Plugin | 3.6.1（最低版本1.5） |
+| Gradle | 6.3 |
+| org.aspectj:aspectjtools | 1.9.6 |
+
+> **AspectJX**是基于 gradle android插件1.5及以上版本设计使用的，如果你还在用1.3或者更低版本，请把版本升上去。
+
+
+## 常见问题
+
+* 问：**AspectJX**是否支持`*.aj`文件的编译?
+
+答：不支持。目前**AspectJX**仅支持annotation的方式，具体可以参考[支持kotlin代码织入的AspectJ Demo](https://github.com/HujiangTechnology/AspectJ-Demo)
+
+* 问：编译时会出现`can't determine superclass of missing type**`及其他编译错误怎么办？
+
+答：大部分情况下把出现问题相关的class文件或者库（jar文件）过滤掉就可以搞定了
+
+> 有任何问题可以提[Issues](https://github.com/wurensen/gradle_plugin_android_aspectjx/issues)或者[discussions](https://github.com/wurensen/gradle_plugin_android_aspectjx/discussions)
 
 ## License
 
 ```txt
-Copyright 2023 Swing
+Copyright 2021 LanceWu
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
