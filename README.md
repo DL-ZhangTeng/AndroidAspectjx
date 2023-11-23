@@ -6,7 +6,7 @@ AspectJX
 
 ## 如何使用
 
-* **插件引用(未发布请使用buildSrc方式)**
+* **插件引用**
 
 在项目根目录的build.gradle里依赖**AspectJX**
 
@@ -14,8 +14,7 @@ AspectJX
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        // 已发布到mavenCentral仓库
-        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
